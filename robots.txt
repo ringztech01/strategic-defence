@@ -1,0 +1,32 @@
+# robots.txt for Strategic Defence Systems
+# https://strategicdefence.com/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://strategicdefence.com/sitemap.xml
+
+# Disallow admin or private directories (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+
+# Allow all search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
