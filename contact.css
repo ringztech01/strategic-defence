@@ -1,0 +1,284 @@
+/* ============================================
+   CONTACT PAGE STYLES
+   ============================================ */
+
+/* Hero Section */
+.contact-hero {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.contact-hero-overlay {
+  background: rgba(0, 0, 0, 0.45);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-10);
+}
+
+.contact-hero-overlay h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+}
+
+.hero-line {
+  width: 80px;
+  height: 3px;
+  background: var(--color-accent);
+  margin: 0 auto var(--space-4);
+}
+
+.contact-hero-overlay p {
+  font-size: var(--text-lg);
+  max-width: 600px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Contact Wrapper - Map + Offices */
+.contact-wrapper {
+  background: var(--bg-light);
+  padding: var(--space-16) var(--container-padding);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-10);
+}
+
+.contact-grid {
+  max-width: 95%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.map-card {
+  background: var(--color-primary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  height: 400px;
+  position: relative;
+}
+
+.map-card iframe,
+.map-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(61, 95, 58, 0.3);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.office-card {
+  background: white;
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.office-card h4 {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+}
+
+.office-card p {
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+  line-height: 1.5;
+}
+
+.contact-line {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+/* Consultation Form Section */
+.consultation {
+  padding: var(--space-16) var(--container-padding);
+  background: var(--bg-light);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-10);
+}
+
+.consultation-box {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--color-primary);
+  padding: var(--space-10);
+  border-radius: var(--radius-lg);
+  color: white;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.consultation-box small {
+  letter-spacing: 0.2em;
+  opacity: 0.7;
+  text-transform: uppercase;
+  font-size: var(--text-xs);
+}
+
+.consultation-box h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  margin: var(--space-4) 0;
+  letter-spacing: 0.05em;
+}
+
+.consultation-box > p {
+  font-size: var(--text-base);
+  opacity: 0.85;
+  margin-bottom: var(--space-8);
+  line-height: 1.6;
+}
+
+/* Form Styles */
+.consultation-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.consultation-form input,
+.consultation-form select,
+.consultation-form textarea {
+  padding: var(--space-3) var(--space-4);
+  border: none;
+  background: rgba(255, 255, 255, 0.95);
+  font-size: var(--text-sm);
+  font-family: var(--font-primary);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  width: 100%;
+}
+
+.consultation-form input::placeholder,
+.consultation-form textarea::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.consultation-form textarea {
+  grid-column: span 2;
+  height: 120px;
+  resize: vertical;
+}
+
+.consultation-form select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%233d5f3a' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+}
+
+.consultation-form button {
+  grid-column: span 2;
+  padding: var(--space-4);
+  border: none;
+  background: #000;
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: var(--text-base);
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-transform: uppercase;
+}
+
+.consultation-form button:hover {
+  background: #222;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .map-card {
+    grid-column: span 2;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    height: 320px;
+  }
+  
+  .contact-hero-overlay h1 {
+    font-size: var(--text-4xl);
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .map-card {
+    grid-column: span 1;
+    height: 250px;
+  }
+  
+  .consultation-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .consultation-form textarea,
+  .consultation-form button {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero-overlay h1 {
+    font-size: var(--text-3xl);
+  }
+  
+  .hero-line {
+    width: 60px;
+    height: 2px;
+  }
+  
+  .contact-hero-overlay p {
+    font-size: var(--text-sm);
+  }
+  
+  .consultation-box {
+    padding: var(--space-6);
+  }
+  
+  .consultation-box h2 {
+    font-size: var(--text-2xl);
+  }
+}
