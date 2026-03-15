@@ -437,7 +437,7 @@
   right: 30px;
   top: 50%;
   transform: translateY(-50%);
-  width: 340px;
+  width: 400px;
   max-height: 80vh;
   overflow: hidden;
   background: rgba(10, 15, 13, 0.88);
@@ -452,8 +452,8 @@
 /* Radar Container */
 .hud-radar {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   margin: 0 auto 12px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(10, 31, 13, 0.9) 0%, rgba(5, 20, 8, 0.95) 100%);
@@ -779,7 +779,7 @@
 /* Responsive */
 @media (max-width: 1200px) {
   .hero-hud {
-    width: 320px;
+    width: 360px;
     padding: 15px;
   }
   
@@ -790,6 +790,15 @@
 }
 
 @media (max-width: 1024px) {
+  .hero {
+    min-height: auto;
+    padding: var(--space-16) var(--space-5);
+  }
+  
+  .hero-content {
+    max-width: 100%;
+  }
+  
   .hero-hud {
     display: none;
   }
@@ -3265,12 +3274,12 @@ align-items:center;
 }
 
 .cyber-container{
-display:grid;
-grid-template-columns:1fr 1fr;
+display:flex;
+justify-content:space-between;
 align-items:center;
-gap:150px;
-max-width:1300px;
+width:100%;
 margin:auto;
+padding:0 15px;
 }
 
 .status{
@@ -3339,6 +3348,7 @@ padding:var(--space-8);
 border-radius:var(--radius-lg);
 overflow:hidden;
 border:1px solid rgba(76,111,80,0.5);
+min-width:400px;
 }
 
 .cyber-display::before{
@@ -3888,7 +3898,8 @@ padding:var(--space-12) var(--space-6);
 }
 
 .cyber-container{
-grid-template-columns:1fr;
+display:flex;
+flex-direction:column;
 gap:var(--space-8);
 }
 
@@ -4443,6 +4454,15 @@ height:120px;
     min-height: auto;
   }
   
+  .cyber-container {
+    flex-direction: column;
+    padding: 0 var(--space-4);
+  }
+  
+  .cyber-text {
+    text-align: center;
+  }
+  
   .cyber-text h1 {
     font-size: var(--text-3xl);
   }
@@ -4453,10 +4473,15 @@ height:120px;
   
   .cyber-text p {
     font-size: var(--text-base);
+    max-width: 100%;
   }
   
   .cyber-display {
     padding: var(--space-5);
+    min-width: auto;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
   }
   
   .hud-radar {
