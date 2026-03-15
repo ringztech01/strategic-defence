@@ -1263,7 +1263,7 @@ h1, h2, h3, h4, h5, h6 {
    ============================================ */
 .hero {
   height: 100vh;
-  background: url("image/SWAT_team_night-vision_alley_flat_LTK7478.jpg") center/cover no-repeat;
+  background: url("image/SWAT_team_night-vision_alley_flat_LTK7478.webp") center/cover no-repeat;
   position: relative;
   display: flex;
   align-items: center;
@@ -1595,11 +1595,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .diagram-1 {
-  background: url("image/pexels-drone-1866742_1920.jpg") center/cover no-repeat;
+  background: url("image/pexels-drone-1866742_1920.webp") center/cover no-repeat;
 }
 
 .diagram-2 {
-  background: url("image/soldier-silhouettes-silhouette-of-army-during-sunset-wallpaper-preview.jpg") center/cover no-repeat;
+  background: url("image/soldier-silhouettes-silhouette-of-army-during-sunset-wallpaper-preview.webp") center/cover no-repeat;
 }
 
 .statement {
@@ -1622,11 +1622,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .vision {
-  background: url("image/webagentur-meerbusch-drone-3525493_1920.jpg") center/cover no-repeat;
+  background: url("image/webagentur-meerbusch-drone-3525493_1920.webp") center/cover no-repeat;
 }
 
 .mission {
-  background: url("image/clarencealford-pilot-6395368_1920.jpg") center/cover no-repeat;
+  background: url("image/clarencealford-pilot-6395368_1920.webp") center/cover no-repeat;
 }
 
 .statement h2 {
@@ -2626,57 +2626,57 @@ h1, h2, h3, h4, h5, h6 {
 /* Page Hero Backgrounds - for index.html */
 .page-hero.drones {
   background: linear-gradient(var(--overlay-hero), var(--overlay-hero)),
-    url("image/4738706-drone-6586331_1920.jpg") center/cover no-repeat;
+    url("image/4738706-drone-6586331_1920.webp") center/cover no-repeat;
 }
 
 .page-hero.ammunition {
   background: linear-gradient(var(--overlay-hero), var(--overlay-hero)),
-    url("image/030619robot1000.jpg") center/cover no-repeat;
+    url("image/030619robot1000.webp") center/cover no-repeat;
 }
 
 .page-hero.electronic {
   background: linear-gradient(var(--overlay-hero), var(--overlay-hero)),
-    url("image/633e1c9374d3e9ba96da2b300029390c.jpg") center/cover no-repeat;
+    url("image/633e1c9374d3e9ba96da2b300029390c.webp") center/cover no-repeat;
 }
 
 .page-hero.fence-border {
   background: linear-gradient(var(--overlay-hero), var(--overlay-hero)),
-    url("image/d6f10d5de4672da26efc80d9b4511a5b.jpg") center/cover no-repeat;
+    url("image/d6f10d5de4672da26efc80d9b4511a5b.webp") center/cover no-repeat;
 }
 
 .page-hero.armored-personnel {
   background: linear-gradient(var(--overlay-hero), var(--overlay-hero)),
-    url("image/cbdac81eef6b22c98076a7701c63362d.jpg") center/cover no-repeat;
+    url("image/cbdac81eef6b22c98076a7701c63362d.webp") center/cover no-repeat;
 }
 
 .page-hero.maritime {
   background: linear-gradient(var(--overlay-hero), var(--overlay-hero)),
-    url("image/life-of-pix-coast-guard-406871_1920.jpg") center/cover no-repeat;
+    url("image/life-of-pix-coast-guard-406871_1920.webp") center/cover no-repeat;
 }
 
 .page-hero.pistols {
   background: linear-gradient(var(--overlay-hero), var(--overlay-hero)),
-    url("image/idsBO2Z39z.jpeg") center/cover no-repeat;
+    url("image/idsBO2Z39z.webp") center/cover no-repeat;
 }
 
 .page-hero.protective {
   background: linear-gradient(var(--overlay-hero), var(--overlay-hero)),
-    url("image/thehilaryclark-career-1501615_1920.jpg") center/cover no-repeat;
+    url("image/thehilaryclark-career-1501615_1920.webp") center/cover no-repeat;
 }
 
 .page-hero.control {
   background: linear-gradient(var(--overlay-hero), var(--overlay-hero)),
-    url("image/jramirezsfs-esmad-6272311_1920.jpg") center/cover no-repeat;
+    url("image/metaliza01-police-3465073_1920.jpg") center/cover no-repeat;
 }
 
 .page-hero.generators {
   background: linear-gradient(var(--overlay-hero), var(--overlay-hero)),
-    url("image/Large-containter-diesel-generator.png") center/cover no-repeat;
+    url("image/klimkin-power-station-928229_190.jpg") center/cover no-repeat;
 }
 
 .page-hero.cyber {
   background: linear-gradient(var(--overlay-hero), var(--overlay-hero)),
-    url("image/thedigitalway-computer-1591018_1920.jpg") center/cover no-repeat;
+    url("image/thedigitalway-computer-1591018_1920.webp") center/cover no-repeat;
 }
 
 
@@ -2965,14 +2965,14 @@ h1, h2, h3, h4, h5, h6 {
 /* Top Card - Pistols */
 .cad.pistols {
   grid-column: 1 / span 2;
-  background: url("image/mikewildadventure-the-devil-4944790_1920.jpg") center/cover no-repeat;
+  background: url("image/mikewildadventure-the-devil-4944790_1920.webp") center/cover no-repeat;
   height: var(--card-height-xl);
 }
 
 /* Rifles */
 .cad.rifles {
   grid-row: 2 / span 2;
-  background: url("image/stocksnap-rifle-2577885_1920.jpg") center/cover no-repeat;
+  background: url("image/stocksnap-rifle-2577885_1920.webp") center/cover no-repeat;
 }
 
 /* Green Bar */
@@ -2984,7 +2984,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Caliber */
 .cad.caliber {
-  background: url("image/stuffwithkids-bullets-4526264_1920.jpg") center/cover no-repeat;
+  background: url("image/stuffwithkids-bullets-4526264_1920.webp") center/cover no-repeat;
 }
 
 /* Decorative circle on cards */
@@ -3105,19 +3105,19 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   color: white;
   background: linear-gradient(rgba(20, 40, 30, 0.85), rgba(20, 40, 30, 0.85)),
-              url("../image/dfx2-rapid-response-riot-pack-suit-helmet-gloves-equipment-bag-30.jpg") center/cover no-repeat;
+              url("../image/dfx2-rapid-response-riot-pack-suit-helmet-gloves-equipment-bag-30.webp") center/cover no-repeat;
   margin-top: var(--space-10);
   margin-bottom: var(--space-10);
 }
 
 .hero-card.control-hero {
   background: linear-gradient(rgba(20, 40, 30, 0.85), rgba(20, 40, 30, 0.85)),
-              url("../image/jramirezsfs-esmad-6272311_1920.jpg") center/cover no-repeat;
+              url("../image/jramirezsfs-esmad-6272311_1920.webp") center/cover no-repeat;
 }
 
 .hero-card.protective-hero {
   background: linear-gradient(rgba(20, 40, 30, 0.85), rgba(20, 40, 30, 0.85)),
-              url("../image/jamesrein-boots-6068160_1920.jpg") center/cover no-repeat;
+              url("../image/jamesrein-boots-6068160_1920.webp") center/cover no-repeat;
 }
 
 .hero-card h2 {
