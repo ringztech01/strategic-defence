@@ -15,6 +15,9 @@
   <link rel="canonical" href="https://strategicdefence.com/pages/contact.html">
   <link rel="icon" type="image/png" href="../image/SDS logo.webp">
   <meta name="theme-color" content="#3d5f3a">
+  
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
   <!-- Preloader -->
@@ -29,14 +32,30 @@
         <a href="../index.html"><img src="../image/SDS logo.webp" alt="Strategic Defence" loading="lazy"></a>
       </div>
       <nav id="nav-menu">
-        <a href="../index.html">Solutions</a>
-        <a href="../index.html#products">Products</a>
-        <a href="contact.html">Global Presence</a>
+        <a href="../index.html">Home</a>
+        <a href="solution.html">Solutions</a>
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="dropdown-toggle">Products <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="drones.html"><i class="fa-solid fa-drone"></i> Drone Systems</a>
+            <a href="ammunition.html"><i class="fa-solid fa-bomb"></i> Ammunition Production</a>
+            <a href="eod.html"><i class="fa-solid fa-robot"></i> EOD Robots</a>
+            <a href="elctronics.html"><i class="fa-solid fa-microchip"></i> Electronic Warfare</a>
+            <a href="fence-border.html"><i class="fa-solid fa-fence"></i> Border Protection</a>
+            <a href="armored-personnel.html"><i class="fa-solid fa-truck"></i> Armored Vehicles</a>
+            <a href="maritime.html"><i class="fa-solid fa-ship"></i> Maritime Equipment</a>
+            <a href="pistols.html"><i class="fa-solid fa-gun"></i> Firearms</a>
+            <a href="protective.html"><i class="fa-solid fa-vest"></i> Protective Equipment</a>
+            <a href="control.html"><i class="fa-solid fa-shield"></i> Riot Control</a>
+            <a href="generators.html"><i class="fa-solid fa-bolt"></i> Power Generators</a>
+            <a href="cyber.html"><i class="fa-solid fa-shield-halved"></i> Cyber Security</a>
+          </div>
+        </div>
+        <a href="contact.html" class="active">Global Presence</a>
         <a href="#">Capabilities</a>
-        <a href="#">About</a>
       </nav>
       <div class="nav-spacer"></div>
-      <button class="quote-btn">Request Quote</button>
+      <button class="quote-btn" onclick="window.location.href='contact.html#consultation'">Request Quote</button>
       <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </div>
@@ -57,7 +76,7 @@
   <section class="contact-wrapper">
     <div class="contact-grid">
       <!-- MAP -->
-      <div class="map-card">
+      <div class="map-card" id="map-section">
         <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" class="map-link">
           <div class="map-placeholder">
             <div class="map-globe">
@@ -97,35 +116,38 @@
   </section>
 
   <!-- CONSULTATION FORM -->
-  <section class="consultation">
+  <section class="consultation" id="consultation">
     <div class="consultation-box">
       <small>SECURE COMMUNICATION LINE</small>
       <h2>REQUEST PRIVATE CONSULTATION</h2>
       <p>Provide credentials & operational mission parameters to contact government accredited channels within 24 hours.</p>
 
-      <form class="consultation-form">
-        <input type="text" placeholder="FULL NAME" required>
-        <input type="text" placeholder="ORGANIZATION" required>
-        <input type="email" placeholder="SECURE EMAIL" required>
-        <input type="text" placeholder="REGION OF OPERATION">
-        <select required>
-          <option>PRODUCT OR SOLUTION INTEREST</option>
-          <option>Tactical Drones & UAV Systems</option>
-          <option>Ammunition & Projectiles</option>
-          <option>EOD Equipment</option>
-          <option>Military Electronics</option>
-          <option>Border Protection</option>
-          <option>Armored Vehicles</option>
-          <option>Maritime Equipment</option>
-          <option>Firearms</option>
-          <option>Protective Equipment</option>
-          <option>Riot Control</option>
-          <option>Power Generators</option>
-          <option>Cyber Security</option>
+      <form class="consultation-form" id="contact-form">
+        <input type="text" name="name" placeholder="FULL NAME" required>
+        <input type="text" name="organization" placeholder="ORGANIZATION" required>
+        <input type="email" name="email" placeholder="SECURE EMAIL" required>
+        <input type="text" name="region" placeholder="REGION OF OPERATION">
+        <select name="product" required>
+          <option value="">PRODUCT OR SOLUTION INTEREST</option>
+          <option value="Tactical Drones & UAV Systems">Tactical Drones & UAV Systems</option>
+          <option value="Ammunition & Projectiles">Ammunition & Projectiles</option>
+          <option value="EOD Equipment">EOD Equipment</option>
+          <option value="Military Electronics">Military Electronics</option>
+          <option value="Border Protection">Border Protection</option>
+          <option value="Armored Vehicles">Armored Vehicles</option>
+          <option value="Maritime Equipment">Maritime Equipment</option>
+          <option value="Firearms">Firearms</option>
+          <option value="Protective Equipment">Protective Equipment</option>
+          <option value="Riot Control">Riot Control</option>
+          <option value="Power Generators">Power Generators</option>
+          <option value="Cyber Security">Cyber Security</option>
         </select>
-        <textarea placeholder="Provide additional details about your requirements, specifications, or operational needs."></textarea>
-        <button type="submit">TRANSMIT DATA PACKAGE ></button>
+        <textarea name="message" placeholder="Provide additional details about your requirements, specifications, or operational needs."></textarea>
+        <button type="submit" id="submit-btn">TRANSMIT DATA PACKAGE ></button>
       </form>
+      
+      <!-- Status Messages -->
+      <div id="form-status" style="display: none; margin-top: 15px; padding: 15px; border-radius: 6px; text-align: center; font-weight: 600;"></div>
     </div>
   </section>
 
@@ -143,7 +165,7 @@
       </div>
       <div class="footer-links">
         <div><h4>SOLUTIONS</h4><a href="#">National Security</a><a href="#">Border Protection</a><a href="#">Cyber Warfare</a><a href="#">Special Ops</a></div>
-        <div><h4>COMPANY</h4><a href="#">About Us</a><a href="#">Global Network</a><a href="#">Certifications</a><a href="#">Contact</a></div>
+        <div><h4>COMPANY</h4><a href="#">About Us</a><a href="contact.html">Global Network</a><a href="#">Certifications</a><a href="contact.html">Contact</a></div>
         <div><h4>LEGAL</h4><a href="#">ITAR Compliance</a><a href="#">Export Controls</a><a href="#">Privacy Policy</a></div>
       </div>
     </div>
@@ -154,5 +176,80 @@
   </footer>
 
   <script src="../script.js"></script>
+  
+  <!-- EmailJS Configuration -->
+  <script>
+    // ============================================
+    // EMAILJS SETUP
+    // ============================================
+    // Replace these with your actual EmailJS credentials:
+    // 1. PUBLIC_KEY - Found in EmailJS Dashboard > Account > Public Key
+    // 2. SERVICE_ID - Found in EmailJS Dashboard > Email Services
+    // 3. TEMPLATE_ID - Found in EmailJS Dashboard > Email Templates
+    
+    (function() {
+      emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your EmailJS Public Key
+    })();
+    
+    // Form Submission Handler
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const submitBtn = document.getElementById('submit-btn');
+      const formStatus = document.getElementById('form-status');
+      
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'TRANSMITTING...';
+      
+      // Get form data
+      const templateParams = {
+        from_name: document.querySelector('[name="name"]').value,
+        from_organization: document.querySelector('[name="organization"]').value,
+        from_email: document.querySelector('[name="email"]').value,
+        region: document.querySelector('[name="region"]').value,
+        product_interest: document.querySelector('[name="product"]').value,
+        message: document.querySelector('[name="message"]').value,
+        to_email: 'your-email@example.com' // Replace with your receiving email
+      };
+      
+      // Send email via EmailJS
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          
+          // Show success message
+          formStatus.style.display = 'block';
+          formStatus.style.background = '#3d5f3a';
+          formStatus.style.color = '#fff';
+          formStatus.textContent = 'TRANSMISSION SUCCESSFUL. Our team will contact you within 24 hours.';
+          
+          // Reset form
+          document.getElementById('contact-form').reset();
+          
+          // Reset button
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'TRANSMIT DATA PACKAGE >';
+          
+          // Hide status after 5 seconds
+          setTimeout(function() {
+            formStatus.style.display = 'none';
+          }, 5000);
+        })
+        .catch(function(error) {
+          console.log('FAILED...', error);
+          
+          // Show error message
+          formStatus.style.display = 'block';
+          formStatus.style.background = '#8b0000';
+          formStatus.style.color = '#fff';
+          formStatus.textContent = 'TRANSMISSION FAILED. Please try again or contact us directly.';
+          
+          // Reset button
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'TRANSMIT DATA PACKAGE >';
+        });
+    });
+  </script>
 </body>
 </html>
