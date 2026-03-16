@@ -2005,29 +2005,20 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
-/* Decorative circles for img-card */
-.img-card::before {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  background: rgba(144, 238, 144, 0.12);
-  border-radius: var(--radius-full);
-  bottom: 10px;
-  right: 10px;
-  z-index: 2;
+/* Link wrapper for entire card clickable */
+.img-card-link {
+  display: block;
+  text-decoration: none;
+  border-radius: var(--radius-lg);
 }
 
-.img-card::after {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background: rgba(144, 238, 144, 0.18);
-  border-radius: var(--radius-full);
-  bottom: 20px;
-  right: 20px;
-  z-index: 2;
+.img-card-link:hover .img-card {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.img-card-link:hover .img-card img {
+  transform: scale(1.05);
 }
 
 .img-card:hover {
@@ -2843,31 +2834,6 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: row-reverse;
 }
 
-/* Decorative circles for drone-card */
-.drone-card::before {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  background: rgba(144, 238, 144, 0.08);
-  border-radius: var(--radius-full);
-  bottom: -20px;
-  right: -20px;
-  z-index: 0;
-}
-
-.drone-card::after {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  background: rgba(144, 238, 144, 0.12);
-  border-radius: var(--radius-full);
-  bottom: 10px;
-  right: 10px;
-  z-index: 0;
-}
-
 .drone-card.reverse {
   flex-direction: row-reverse;
 }
@@ -2947,56 +2913,169 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* ============================================
-   18. ADVANTAGES GRID
+   18. KEY FEATURES (Single Card Layout)
    ============================================ */
-.advantages {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-10);
-  margin-top: var(--space-5);
+.key-features {
+  margin-top: var(--space-10);
+  padding: 0 var(--space-5);
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.adv-box {
+.key-features-card {
+  background: linear-gradient(135deg, #1a2e1c 0%, #0d1f0f 100%);
+  border: 1px solid rgba(76, 111, 80, 0.3);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
   position: relative;
-  background: var(--bg-card-accent);
-  padding: var(--space-10);
-  height: 300px;
-  font-size: var(--text-2xl);
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
-/* Decorative circles - inside the card */
-.adv-box::before {
+.key-features-card::before {
   content: "";
   position: absolute;
-  width: 120px;
-  height: 120px;
-  background: rgba(144, 238, 144, 0.12);
-  border-radius: var(--radius-full);
-  bottom: 15px;
-  right: 15px;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary-light), var(--color-accent));
 }
 
-.adv-box::after {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  background: rgba(144, 238, 144, 0.18);
-  border-radius: var(--radius-full);
-  bottom: 30px;
-  right: 30px;
+.key-features-title {
+  text-align: center;
+  margin-bottom: var(--space-8);
 }
 
-.quality-safety {
+.key-features-title h3 {
+  color: var(--color-accent);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.key-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.feature-item {
+  text-align: center;
+  padding: var(--space-4);
+  transition: transform var(--transition-normal);
+}
+
+.feature-item:hover {
+  transform: translateY(-3px);
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto var(--space-3);
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+}
+
+.feature-item:hover .feature-icon {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-gold-dark) 100%);
+  transform: scale(1.05);
+}
+
+.feature-icon i {
+  font-size: 22px;
+  color: white;
+}
+
+.feature-item h4 {
+  color: var(--text-light);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.feature-item p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+
+/* Features with 3 columns */
+.key-features-grid.cols-3 {
   grid-template-columns: repeat(3, 1fr);
-  gap: 100px;
-  margin-top: var(--space-16);
+}
+
+/* Features with 2 columns */
+.key-features-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .key-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+  
+  .key-features-grid.cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .key-features-card {
+    padding: var(--space-6);
+  }
+}
+
+@media (max-width: 600px) {
+  .key-features-grid,
+  .key-features-grid.cols-3,
+  .key-features-grid.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+  
+  .key-features-card {
+    padding: var(--space-5);
+  }
+  
+  .key-features-title h3 {
+    font-size: var(--text-lg);
+  }
+  
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .feature-icon i {
+    font-size: 18px;
+  }
+  
+  .feature-item h4 {
+    font-size: 11px;
+  }
+  
+  .feature-item p {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .key-features-grid,
+  .key-features-grid.cols-3,
+  .key-features-grid.cols-2 {
+    grid-template-columns: 1fr;
+  }
 }
 
 
@@ -3125,23 +3204,23 @@ h1, h2, h3, h4, h5, h6 {
   background: url("image/stuffwithkids-bullets-4526264_1920.webp") center/cover no-repeat;
 }
 
-/* Decorative circle on cards */
-.cad::before {
-  content: "";
+.overlay-maritime {
   position: absolute;
-  width: 150px;
-  height: 150px;
-  background: rgba(130, 255, 170, 0.25);
-  border-radius: var(--radius-full);
-  right: -40px;
-  bottom: -40px;
-  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-5);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
 }
 
+.overlay-maritime h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  margin: 0;
+}
 
-/* ============================================
-   22. SAFETY GRID (Protective Page)
-   ============================================ */
+/* Safety Grid */
 .safety-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -3175,31 +3254,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: var(--text-base);
   font-weight: var(--font-bold);
   color: var(--text-light);
-}
-
-/* Decorative circles inside safety-card */
-.safety-card::before {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  background: rgba(144, 238, 144, 0.12);
-  border-radius: var(--radius-full);
-  bottom: 10px;
-  right: 10px;
-  z-index: 1;
-}
-
-.safety-card::after {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background: rgba(144, 238, 144, 0.18);
-  border-radius: var(--radius-full);
-  bottom: 20px;
-  right: 20px;
-  z-index: 1;
 }
 
 /* When safety-card is inside armored grid */
@@ -3337,31 +3391,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0px 1px 0px #ffd400;
   position: relative;
   overflow: hidden;
-}
-
-/* Decorative circles for another-card */
-.another-card::before {
-  content: "";
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  background: rgba(144, 238, 144, 0.12);
-  border-radius: var(--radius-full);
-  bottom: 8px;
-  right: 8px;
-  z-index: 1;
-}
-
-.another-card::after {
-  content: "";
-  position: absolute;
-  width: 45px;
-  height: 45px;
-  background: rgba(144, 238, 144, 0.18);
-  border-radius: var(--radius-full);
-  bottom: 15px;
-  right: 15px;
-  z-index: 1;
 }
 
 .right {
